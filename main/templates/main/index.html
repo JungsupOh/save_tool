@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>세이브공구</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'main/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+    <script type="text/javascript">
+        var kakao_api_key = "{{ kakao_api_key }}";
+    </script>
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey={{ kakao_api_key }}"></script>
+    <script src="{% static 'js/initMap.js' %}" defer></script>
+    <script src="{% static 'js/chatbot.js' %}" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="{% static 'main/saveLogoWhite_tr.png' %}" alt="세이브공구 로고">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero">
+            <div class="highlights">
+                <div class="highlight-item">
+                    <div class="circle">본사직영판매</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="circle">합리적인 가격</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="circle">정품&최상의 상품</div>
+                </div>
+            </div>
+            <h2>고객님의 쇼핑 시간을 <br> <span class="highlight">SAVE</span> 할 수 있는 쇼핑몰이 되겠습니다.</h2>
+            <a href="javascript:void(0)" class="btn" onclick="openChatbot()">채팅상담</a>
+        </div>
+
+        <section class="features">
+            <div class="feature">
+                <a href="https://www.hilti.co.kr/"><img src="{% static 'main/hilti-logo.png' %}" alt="Hilti"></a>
+            </div>
+            <div class=" feature">
+                <a href="https://www.dewalt.co.kr/"><img src="{% static 'main/dewalt_logo.png' %}" alt="DeWalt"></a>
+            </div>
+            <div class="feature">
+                <a href="https://www.milwaukeetool.co.kr/"><img src="{% static 'main/brand_milwaukee.png' %}" alt="Milwaukee"></a>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div id="map" style="width:50%;height:400px;"></div>
+                <div class="contact-info">
+                    <p>주소: 충남 천안시 서북구 봉정로 167, 103</p>
+                    <p>연락처: savetool09@naver.com</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 세이브공구. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Modal -->
+    <div id="chatbotModal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <img src="{% static 'main/saveLogoWhite_tr.png' %}" alt="세이브공구 로고" class="chat-logo">
+                    <h3>세이브공구 입니다. 무엇을 도와드릴까요?</h3>
+                </div>
+                <div class="chat-body" id="chat-body">
+                    <!-- Chat messages will appear here -->
+                </div>
+                <div class="chat-footer">
+                    <input type="text" id="chat-input" placeholder="Type a message...">
+                    <button onclick="sendMessage()"><img src="{% static 'main/send_icon.png' %}" alt="Send"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
