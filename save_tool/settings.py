@@ -28,8 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['tebahsoft.iptime.org', 'localhost', '127.0.0.1']
 
-KAKAO_API_KEY = os.getenv('KAKAO_API_KEY')
-OPENAI_API_KEY = os.getenv('KAKAO_API_KEY')
+KAKAO_API_KEY = '36067390063e463609bb70f64ebcdd99'
 
 
 # Application definition
