@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-)$deum%!7ap(pq%qtyk2dx-54ul)7nykln5ii$zyghqdolb2hb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tebahsoft.iptime.org', 'localhost', '127.0.0.1']
 
 KAKAO_API_KEY = os.getenv('KAKAO_API_KEY')
 OPENAI_API_KEY = os.getenv('KAKAO_API_KEY')
